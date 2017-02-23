@@ -1,0 +1,17 @@
+<div class="well">
+<h1>Forgotten Empires</h1>
+</div>
+
+<div class="well">
+  <h3>Welcome to Forgotten Empires!</h3>
+  <p> This is a game where you become the leader of a civilization, and your job is to lead them to greatness! Will your civilzation prosper, or will it become just another...
+    <h2>Forgotten Empire</h2>
+</div>
+  <div class="well">
+    <% if user_signed_in? %>
+    <%= link_to "Build your empire!", new_user_nation_path(current_user) %>
+    <% else %>
+    <h2>You must sign in to play!</h2>
+    <h6>Thats the rules...</h6>
+    <% end %>
+  </div>

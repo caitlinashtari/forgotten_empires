@@ -1,0 +1,3 @@
+class StatisticsController < ApplicationRecord
+
+end

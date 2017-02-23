@@ -1,0 +1,13 @@
+<% if @statistics != nil %>
+<div class="stats well">
+  <h1 class="banner">State of the Nation</h1>
+  <h2>Capital: <%= @statistics.capital %></h2>
+  <h2>Resources: <%= @statistics.resources %></h2>
+  <h2>Population: <%= @statistics.population %></h2>
+  <h2>Stability: <%= @statistics.stability %></h2>
+</div>
+<% else %>
+<div class="well">
+  <h1>oops</h1>
+</div>
+<% end %>

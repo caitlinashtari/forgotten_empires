@@ -6,18 +6,22 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :culture %>
     <%= f.select :culture,["Steam Technology", "Magic", "Communing with Spirits"]  %>
     </div>
 
     <div class="form-group">
+      <%= f.label :govt, "Goverment" %>
     <%= f.select :govt,["Democracy", "Monarchy", "Dictatorship", "Oligarchy", "Neighborhood Watch"]  %>
     </div>
 
     <div class="form-group">
+      <%= f.label :econ, "Economy" %>
     <%= f.select :econ,["Capitalism", "Socialism", "Central"]  %>
     </div>
     <div class="form-group">
+      <%= f.label :geo, "Geography" %>
     <%= f.select :geo,["Coastal", "Mountains", "Desert", "Plains", "Forest"]  %>
     </div>
-    <%= f.submit %>
+    <%= f.submit :id => "create_nation"%>
   <% end %>

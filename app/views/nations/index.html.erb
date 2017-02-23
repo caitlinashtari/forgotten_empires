@@ -1,29 +1,14 @@
-<% if user_signed_in? %>
-<div class="well">
-  <h1 class="banner">Long live <%= @user.user_name %>, long live <%= @nation.name %></h1>
-  <div class="row">
-    <div class="col-md-2">
-      <h2>Culture:</h2>
-      <h3><%=  @nation.culture %></h3>
-    </div>
-    <div class="col-md-3">
-      <h2>Government:</h2>
-      <h3><%= @nation.govt %></h3>
-    </div>
-    <div class="col-md-3">
-      <h2>Economy:</h2>
-      <h3><%= @nation.econ %></h3>
-    </div>
-    <div class="col-md-3">
-      <h2> Geography:</h2>
-      <h3><%= @nation.geo %></h3>
-    </div>
+<% if user_signed_in? && @user.nations.first != nil %>
+<%= render "display_nation" %>
+
+<% elsif user_signed_in? %>
+<div class="pretty-well well" >
+  <%= link_to "Create Your Empire", new_user_nation_path(@user), remote: true, id: "new_nation" %>
+</div>
+
+  <% else %>
+  <div class="jumbotron">
+    <h2>You must sign in to play!</h2>
+    <h6>Thats the rules...</h6>
   </div>
-</div>
-<% else %>
-<div class="jumbotron">
-  <h2>You must sign in to play!</h2>
-  <h6>Thats the rules...</h6>
-</div>
 <% end %>
-<%= render "/statistics/stat_display", statistics: @statistics %>

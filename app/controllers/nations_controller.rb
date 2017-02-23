@@ -2,13 +2,18 @@ class NationsController < ApplicationController
   def index
     @user = current_user
     @nation = @user.nations.last
+    if @nation != nil
     @statistics = @nation.statistics.first
+    else
+      @statistics = nil
+    end
   end
 
   def new
     @user = current_user
     @nation = @user.nations.new
     @statistics = @nation.statistics.new
+    
   end
 
   def create

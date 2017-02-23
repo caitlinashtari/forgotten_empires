@@ -9,7 +9,7 @@
 </div>
   <div class="well">
     <% if user_signed_in? %>
-    <%= link_to "Build your empire!", new_user_nation_path(current_user) %>
+    <%= link_to "Build your empire!", user_nations_path(current_user) %>
     <% else %>
     <h2>You must sign in to play!</h2>
     <h6>Thats the rules...</h6>

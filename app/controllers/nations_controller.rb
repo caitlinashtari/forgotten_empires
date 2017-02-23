@@ -15,8 +15,7 @@ class NationsController < ApplicationController
     @user = current_user
       @nation = @user.nations.new(nation_params)
       if @nation.save
-        @statistics = @nation.statistics.new(statistics_params)
-
+        @statistics = @nation.new_stats
         redirect_to user_nations_path
       else
         render :new

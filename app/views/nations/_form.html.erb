@@ -1,5 +1,5 @@
 
-  <%= form_for [@user, @nation] do |f| %>
+  <%= form_for [@user, @nation], remote: true do |f| %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name %>

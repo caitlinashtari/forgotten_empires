@@ -1,8 +1,12 @@
+<div id="nation_display">
+
+</div>
+
 <% if user_signed_in? && @user.nations.first != nil %>
 <%= render "display_nation" %>
 
 <% elsif user_signed_in? %>
-<div class="pretty-well well" >
+<div class="pretty-well well" id="nation_creation" >
   <%= link_to "Create Your Empire", new_user_nation_path(@user), remote: true, id: "new_nation" %>
 </div>
 

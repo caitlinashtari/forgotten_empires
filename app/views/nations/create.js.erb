@@ -1,0 +1,3 @@
+$('#nation_creation').hide();
+$('#nation_display').append(' <%= j render ("display_nation"), statistics: @nation.statistics.first %>');
+$('#notice').html(" <%= flash[:notice] %>");

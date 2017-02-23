@@ -13,16 +13,21 @@ class NationsController < ApplicationController
     @user = current_user
     @nation = @user.nations.new
     @statistics = @nation.statistics.new
-    
+
   end
 
   def create
     @user = current_user
       @nation = @user.nations.new(nation_params)
       if @nation.save
-        @statistics = @nation.new_stats
-        redirect_to user_nations_path
+        initial_stats = @nation.new_stats
+        @statistics = @nation.statistics.first
+        respond_to do |format|
+          format.html {redirect_to user_nations_path}
+          format.js { flash[:notice] = "A new empire is born!"}
+        end
       else
+        flash[:alert] = "oOOOOPPSS"
         render :new
       end
   end

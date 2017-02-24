@@ -2,6 +2,7 @@ class Nation < ActiveRecord::Base
   validates :name, :presence => true
   belongs_to :user
   has_many :statistics
+  has_many :events, through: :statistics
 
   def new_stats
     stats = nil
@@ -11,7 +12,7 @@ class Nation < ActiveRecord::Base
     stability = 0
     if self.govt === "Democracy"
       capital += 10000
-      resources = "oil" 
+      resources = "oil"
       population += 500000
       stability += 80
     elsif self.govt === "Dictatorship"
@@ -26,7 +27,7 @@ class Nation < ActiveRecord::Base
       stability += 90
     elsif self.govt === "Oligarchy"
       capital += 20000
-      resources = "timber" 
+      resources = "timber"
       population += 100
       stability += 60
     elsif self.govt === "Neighborhood Watch"

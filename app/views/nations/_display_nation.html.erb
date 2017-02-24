@@ -19,6 +19,19 @@
     </div>
   </div>
 </div>
+<div class="well">
+<% if @events.any? %>
+<%@events.each do |event|%>
+<p>
+  <%= event.name %>
+</p>
+<% end %>
+<% else %>
+ <h1>NOTHIGNS</h1>
+ <% end %>
+ </div>
+
 <% if @statistics != nil %>
 <%= render "/statistics/stat_display", statistics: @statistics %>
+<%= link_to "Event" %>
 <% end %>

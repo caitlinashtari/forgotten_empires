@@ -7,6 +7,7 @@ class NationsController < ApplicationController
     else
       @statistics = nil
     end
+    @events = Event.all
   end
 
   def new
